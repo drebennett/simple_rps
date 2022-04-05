@@ -23,7 +23,7 @@ function playRound(playerSelection, computerSelection) {
         computerScore++
         roundWinner = 'computer'
     }
-    console.log("Round winner: " + roundWinner)
+    console.log("computer selection" + computerSelection);
     displayResult(roundWinner);
 }
 
@@ -64,18 +64,30 @@ function isGameOver() {
 window.onload = function() {
 
     const paperBtn = document.querySelector('#paperBtn');
-
     paperBtn.addEventListener('click', () => {
         console.log("clicked paper button");
-        playRound();
+        playRound('PAPER', getComputerChoice());
+    });
+
+    const rockBtn = document.querySelector('#rockBtn');
+    rockBtn.addEventListener('click', () => {
+        console.log("clicked rock button");
+        playRound('ROCK', getComputerChoice());
+    });
+
+    const scissorBtn = document.querySelector('#scissorBtn');
+    scissorBtn.addEventListener('click', () => {
+        console.log("clicked scissor button");
+        playRound('SCISSORS', getComputerChoice());
     });
 }
 
 
 
 function displayResult(roundWinner) {
+    console.log("round winner: " + roundWinner);
     const resultContainer = document.querySelector('#resultContainer');
-    resultContainer.style.color = "red";
+    resultContainer.style.color = "pink";
     //roundWinner.fontcolor("blue");
     resultContainer.textContent = roundWinner;
     //     const content = document.createElement('div');
