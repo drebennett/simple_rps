@@ -13,7 +13,7 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === 'PAPER' && computerSelection === 'ROCK')
     ) {
         playerScore++
-        roundWinner = 'player'
+        roundWinner = 'you'
     }
     if (
         (computerSelection === 'ROCK' && playerSelection === 'SCISSORS') ||
